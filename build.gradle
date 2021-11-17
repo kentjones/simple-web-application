@@ -9,7 +9,7 @@
 	id 'war'
  }
 
-group 'net.nitecoder.apollo'
+group 'me.webhop.apollo'
 version '1.0'
 
 war {
