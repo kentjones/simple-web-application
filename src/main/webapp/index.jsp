@@ -1,1 +1,1 @@
-Hello, World version 7! We just completed build and deploy.
+Hello World, version 8! We just did a build and deploy of simple-web-appliation.
