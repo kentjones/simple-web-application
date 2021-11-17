@@ -1,4 +1,4 @@
-package com.example;
+package me.webhop.apollo;
 
 import org.junit.Before;
 import org.junit.Test;

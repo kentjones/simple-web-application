@@ -1,4 +1,4 @@
-package com.example;
+package me.webhop.apollo;
 
 /**
  * This is a class.
