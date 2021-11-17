@@ -13,7 +13,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <title>Sample Web Application  - SnoopServlet</title>
+    <title>Sample Web Application  - HelloWorldServlet</title>
     <style>
         body{
             font-family: 'Open Sans', sans-serif;
@@ -42,7 +42,7 @@
     Dtime = Time.toString();
 %>
 
-<h2> This is a Sample Web Application - Snoop Servlet  </h2>
+<h2> This is a Sample Web Application - Hello World Servlet </h2>
 <hr>
 
 <div>
