@@ -1,9 +1,9 @@
 pipeline {
   agent any
-  parameters{
-      string(name: 'tomcat_dev', defaultValue: 'laptop:8010', description: 'Tomcat development server')
-      string(name: 'tomcat_prod', defaultValue: 'laptop:9010', description: 'Tomcat production server')
-  }
+//   parameters{
+//       string(name: 'tomcat_dev', defaultValue: 'laptop:8010', description: 'Tomcat development server')
+//       string(name: 'tomcat_prod', defaultValue: 'laptop:9010', description: 'Tomcat production server')
+//   }
   triggers{
       pollSCM('* * * * *')
   }
@@ -19,7 +19,7 @@ pipeline {
       post {
         success {
           echo 'now archiving....'
-          archiveArtifacts artifacts: 'build/libs/*.war'
+          archiveArtifacts artifacts: '**/libs/*.war'
         }
       }
     }
@@ -27,6 +27,10 @@ pipeline {
       steps {
         build job: 'deploy-to-dev'
       }
+       post {
+         success {
+           echo 'Deployed war application to tomcat'
+         }
     }
   }
 }
