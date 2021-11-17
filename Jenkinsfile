@@ -31,6 +31,7 @@ pipeline {
          success {
            echo 'Deployed war application to tomcat'
          }
+       }
     }
   }
 }
