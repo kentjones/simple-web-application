@@ -1,1 +1,1 @@
-Hello World, version 8! We just did a build and deploy of simple-web-appliation.
+Hello World, your simple war application is running!.

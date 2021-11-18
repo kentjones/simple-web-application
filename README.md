@@ -1,9 +1,10 @@
 # Simple War project 
 
-A simple war application template. Clone and go. 
+A simple war application template. Fork and go. 
 
-Once you clone this simple war application you should be able to set it up in jenkins and 
-build it and deploy it to tomcat. Display the "Hello World"
+Run `Gradle assemble` then deploy to tomcat. I use Jenkins to build and deploy to my local tomcat.  
 
-Setup Jenkins to Poll SCM when changes are committed to GitHub.
+Display the welcome page "http://localhost:8080/welcome.jsp"
+
+
 
