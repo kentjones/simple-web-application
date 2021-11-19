@@ -25,11 +25,14 @@ pipeline {
     }
     stage('Test') {
         steps {
-            try {
-                bat 'gradle :test'
-            } catch(e){
-               currentBuild.result = 'FAILURE'
-               throw e
+            bat 'gradle :test'
+        }
+        post {
+            success {
+                echo 'test passed'
+            }
+            failure {
+                echo 'test failed'
             }
         }
     }
