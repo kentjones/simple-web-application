@@ -30,7 +30,6 @@ pipeline {
         post {
             success {
                 echo 'test passed'
-                passed = true
             }
             failure {
                 echo 'test failed'
