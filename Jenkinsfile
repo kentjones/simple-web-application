@@ -30,6 +30,7 @@ pipeline {
         post {
             success {
                 echo 'test passed'
+                passed = true
             }
             failure {
                 echo 'test failed'
@@ -37,12 +38,20 @@ pipeline {
         }
     }
     stage('Deploy to Dev'){
+      when {
+        expression {
+            currentBuild.result == null || currentBuild.result == 'SUCCESS'
+        }
+      }
       steps {
         build job: 'deploy-to-dev'
       }
        post {
          success {
            echo 'Deployed war application to tomcat'
+         }
+         failure {
+             echo 'Deploy to Dev failed. Nothing deployed'
          }
        }
     }
