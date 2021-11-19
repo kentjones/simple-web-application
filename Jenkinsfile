@@ -23,6 +23,16 @@ pipeline {
         }
       }
     }
+    stage('Test') {
+        steps {
+            try {
+                bat 'gradle :test'
+            } catch(err){
+             echo 'Something went wrong'
+             throw
+            }
+        }
+    }
     stage('Deploy to Dev'){
       steps {
         build job: 'deploy-to-dev'
