@@ -57,6 +57,7 @@ pipeline {
          }
          failure {
              echo 'Deploy to Dev failed. Nothing deployed'
+             emailext body: 'The simple build application failed', recipientProviders: [buildUser()], subject: 'Simple Web Application build failed', to: 'kent.accounts@use.startmail.com'
          }
        }
     }
