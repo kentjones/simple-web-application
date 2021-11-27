@@ -28,14 +28,18 @@ public class TestGreeter {
     String someone = "World";
 
     assertThat(greeter.greet(someone), containsString(someone));
+
+    logger.info(greeter.greet(someone));
   }
 
   @Test
   public void greetShouldIncludeGreetingPhrase() {
     logger.info("greetShouldIncludeGreetingPhrase");
 
-    String someone = "World";
+    String someone = "Texas";
 
     assertThat(greeter.greet(someone).length(), is(greaterThan(someone.length())));
+
+    logger.info(greeter.greet(someone));
   }
 }
