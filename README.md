@@ -11,8 +11,9 @@ A simple war application template. Fork and go.
 
 Run `Gradle assemble` to create a war artifact. Deploy to tomcat and you are golden.
 
-I'm using Jenkins to build and deploy to my local tomcat.  
+Using Jenkins to build and deploy to a local tomcat.
 
+Adding Spock testing framework. 
 
 
 Display the welcome page "http://localhost:8080/welcome.jsp"
