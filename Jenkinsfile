@@ -8,7 +8,7 @@ pipeline {
       pollSCM('* * * * *')
   }
   tools {
-    gradle 'Gradle-5.4'
+    gradle 'Gradle-Current'
   }
 
   stages {
