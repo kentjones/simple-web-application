@@ -1,6 +1,6 @@
 # Ignore Gradle project-specific cache directory
 .gradle
-
+.zip
 # Ignore IntelliJ project-specific directory
 .idea
 

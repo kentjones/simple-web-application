@@ -8,13 +8,14 @@ pipeline {
       pollSCM('* * * * *')
   }
   tools {
+    echo 'loading current version of gradle'
     gradle 'Gradle-Current'
   }
 
   stages {
     stage('Build') {
       steps {
-        bat 'gradle :clean :assemble'
+        bat './gradlew :clean :assemble'
       }
       post {
         success {
@@ -25,7 +26,7 @@ pipeline {
     }
     stage('Test') {
         steps {
-            bat 'gradle :test'
+            bat './gradlew :test'
         }
         post {
             success {
