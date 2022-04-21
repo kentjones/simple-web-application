@@ -8,7 +8,6 @@ pipeline {
       pollSCM('* * * * *')
   }
   tools {
-    echo 'loading current version of gradle'
     gradle 'Gradle-Current'
   }
 
