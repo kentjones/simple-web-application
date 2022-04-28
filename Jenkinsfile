@@ -47,7 +47,7 @@ pipeline {
 
         copyArtifacts filter: '**/libs/*war', fingerprintArtifacts: true, projectName: 'simple-web-application', selector: lastWithArtifacts()
 
-        deploy adapters: [tomcat9(credentialsId: "${tomcat_dev_credentials}", path: '', url: "http://${tomcat_dev}/")], contextPath: 'hello', war: '**/libs/*.war'
+        deploy adapters: [tomcat9(credentialsId: 'affeff9e-8903-42b1-93e2-8425515f7e07', path: '', url: "http://${tomcat_dev}/")], contextPath: 'hello', war: '**/libs/*.war'
       }
 //       steps {
 //         build job: 'deploy-to-dev'
