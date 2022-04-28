@@ -1,9 +1,10 @@
 pipeline {
   agent any
-//   parameters{
-//       string(name: 'tomcat_dev', defaultValue: 'laptop:8010', description: 'Tomcat development server')
-//       string(name: 'tomcat_prod', defaultValue: 'laptop:9010', description: 'Tomcat production server')
-//   }
+  parameters{
+      string(name: 'tomcat_dev', defaultValue: 'laptop:8010', description: 'Tomcat development server')
+      string(name: 'tomcat_dev_credentials', defaultValue: 'affeff9e-8903-42b1-93e2-8425515f7e07', description: 'Tomcat development credentials')
+      string(name: 'tomcat_prod', defaultValue: 'laptop:9010', description: 'Tomcat production server')
+  }
   triggers{
       pollSCM('* * * * *')
   }
@@ -46,7 +47,7 @@ pipeline {
 
         copyArtifacts filter: '**/libs/*war', fingerprintArtifacts: true, projectName: 'simple-web-application', selector: lastWithArtifacts()
 
-        deploy adapters: [tomcat9(credentialsId: 'affeff9e-8903-42b1-93e2-8425515f7e07', path: '', url: 'http://localhost:8010/')], contextPath: 'hello', war: '**/libs/*.war'
+        deploy adapters: [tomcat9(credentialsId: "${tomcat_dev_credentials}", path: '', url: "http://${tomcat_dev}/")], contextPath: 'hello', war: '**/libs/*.war'
       }
 //       steps {
 //         build job: 'deploy-to-dev'
