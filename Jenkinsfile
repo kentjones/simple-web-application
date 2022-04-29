@@ -6,7 +6,7 @@ pipeline {
       string(name: 'tomcat_prod', defaultValue: 'laptop:9010', description: 'Tomcat production server')
   }
   triggers{
-      pollSCM('0/8 * * * *')
+      pollSCM('* * * * *')
   }
   tools {
     gradle 'Gradle-Current'
