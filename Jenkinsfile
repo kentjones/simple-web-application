@@ -6,7 +6,7 @@ pipeline {
       string(name: 'tomcat_prod', defaultValue: 'laptop:9010', description: 'Tomcat production server')
   }
   triggers{
-      pollSCM('* * * * *')
+      pollSCM('0 0/8 * * *')
   }
   tools {
     gradle 'Gradle-Current'
@@ -47,7 +47,7 @@ pipeline {
 
         copyArtifacts filter: '**/libs/*war', fingerprintArtifacts: true, projectName: 'simple-web-application', selector: lastWithArtifacts()
 
-        deploy adapters: [tomcat9(credentialsId: "affeff9e-8903-42b1-93e2-8425515f7e07", path: '', url: "http://${tomcat_dev}/")], contextPath: 'hello', war: '**/libs/*.war'
+        deploy adapters: [tomcat9(credentialsId: "affeff9e-8903-42b1-93e2-8425515f7e07", path: '', url: 'http://laptop:8010/')], contextPath: 'hello', war: '**/libs/*.war'
       }
 //       steps {
 //         build job: 'deploy-to-dev'
